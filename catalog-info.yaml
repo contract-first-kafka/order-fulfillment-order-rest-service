@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: order-rest
+  title: order-rest
+  description: OpenAPI-only Component regression verification.
+  annotations:
+    backstage.io/kubernetes-id: order-rest
+    contract-first-idp.github.io/scm-provider: github
+    contract-first-idp.github.io/scm-host: github.com
+    contract-first-idp.github.io/domain-org: contract-first-kafka
+    contract-first-idp.github.io/domain-repo: demo-domain
+    contract-first-idp.github.io/repository-name: order-fulfillment-order-rest-service
+    contract-first-idp.github.io/implementation-profile: quarkus-camel-openapi
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/domain-maintainers
+  system: system:default/order-fulfillment
+  providesApis:
+    - api:default/order-submission
